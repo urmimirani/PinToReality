@@ -32,29 +32,8 @@ Authentication with JWT (JSON Web Tokens)
 bcrypt for password hashing
 
 ## Access PinToReality:
+Copy the codes into vscode.
 Open your web browser and go to http://localhost:3000.
-
-## Folder Structure
-
-├── public/             # Frontend HTML, CSS, and JavaScript files
-│   ├── css/
-│   │   └── styles.css
-│   ├── js/
-│   │   └── main.js
-│   ├── index.html      # Landing page
-│   ├── login.html      # Login page
-│   ├── register.html   # Registration page
-│   └── my-boards.html  # User-specific boards page
-├── server/             # Backend server files
-│   ├── models/         # Mongoose models (User and Board)
-│   │   ├── User.js
-│   │   └── Board.js
-│   ├── routes/         # Express routes
-│   │   ├── auth.js     # Authentication routes (/register, /login)
-│   │   └── boards.js   # Board management routes (POST /, GET /)
-│   ├── config.js       # Configuration (MongoDB URI, JWT Secret)
-│   └── app.js          # Express application setup
-└── package.json        # Node.js dependencies and scripts
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
