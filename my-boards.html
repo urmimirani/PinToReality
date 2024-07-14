@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Boards - PinToReality</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>PinToReality</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="boards">
+                <h2>My Boards</h2>
+                <form id="boardForm">
+                    <label for="title">Board Title:</label>
+                    <input type="text" id="title" name="title" required>
+                    <div id="items">
+                        <label for="item1">Item 1:</label>
+                        <input type="text" id="item1" name="items" required>
+                        <label for="link1">Link 1:</label>
+                        <input type="url" id="link1" name="links" required>
+                    </div>
+                    <button type="button" id="addItem">Add Another Item</button>
+                    <button type="submit">Create Board</button>
+                </form>
+                <div id="userBoards"></div>
+            </section>
+            
+        </main>
+        <footer>
+            <p>&copy; 2024 PinToReality</p>
+        </footer>
+    </div>
+    <script src="/js/main.js"></script>
+    <script>
+        document.getElementById('addItem').addEventListener('click', () => {
+            const itemIndex = document.querySelectorAll('#items input[name="items"]').length + 1;
+            const itemDiv = document.createElement('div');
+            itemDiv.innerHTML = `
+                <label for="item${itemIndex}">Item ${itemIndex}:</label>
+                <input type="text" id="item${itemIndex}" name="items" required>
+                <label for="link${itemIndex}">Link ${itemIndex}:</label>
+                <input type="url" id="link${itemIndex}" name="links" required>
+            `;
+            document.getElementById('items').appendChild(itemDiv);
+        });
+    </script>
+</body>
+</html>
